@@ -12,6 +12,7 @@ public class Target {
     private float y;
     private Projectile projectile;
 
+
     public Target(){
         this.texture = new Texture("grass40.png");
         this.x =(float) Math.random()*1280;
