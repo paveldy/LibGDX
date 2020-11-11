@@ -128,6 +128,7 @@ public class Tank {
             angleWeapon += 90.0f * dt;
         }
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && !projectile.isActive()) {
+            projectile = new Projectile();
             projectile.shoot(x, y, angle + angleWeapon);
         }
         projectile.update(dt);
@@ -142,8 +143,6 @@ public class Tank {
                 massiveOfXY[1] = y + speed * MathUtils.sinDeg(angle) * dt;
 //                massiveOfXY[2] = angleInput;
             }
-
-
             if (x < 0) {
                 massiveOfXY[0] = 0.0f;
                 massiveOfXY[1] = y + speed * MathUtils.sinDeg(angle) * dt;
@@ -156,17 +155,14 @@ public class Tank {
 //                } else if (angleInput > -90 && angleInput < -180) {
 //                    massiveOfXY[2] = -90.0f;
 //                }
-
             }
             if (x > 1280) {
                 massiveOfXY[0] = 1280.0f;
                 massiveOfXY[1] = y + speed * MathUtils.sinDeg(angle) * dt;
-
             }
             if (y < 0) {
                 massiveOfXY[0] = x + speed * MathUtils.cosDeg(angle) * dt;
                 massiveOfXY[1] = 0.0f;
-
             }
             if (y > 720) {
                 massiveOfXY[0] = x + speed * MathUtils.cosDeg(angle) * dt;
@@ -209,7 +205,7 @@ public class Tank {
             projectile.render(batch); //мы говорим, что после как нарисовался танк, надо рисовать пулю
         }
     }
-
+ 
     public void dispose() {
         texture.dispose();
         projectile.dispose();

@@ -10,11 +10,13 @@ public class MyGdxGame extends ApplicationAdapter {
     //  private Texture img; //картинка видео памяти
     //private float x;
     private Tank tank;
+    private Target target;
 
     @Override
     public void create() {   // создаем СпарйтБатч и Текстуру
         batch = new SpriteBatch();
         tank = new Tank();
+        target = new Target();
 //        img = new Texture("tank.png");
 //        x = 0.0f;
     }
@@ -29,6 +31,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 //        batch.draw(img, x, 0); //начинаем движение , так как х увеличивается выше с каждым обновлением
         tank.render(batch);
+        target.render(batch);
 
 
         batch.end();// заканчиваем рисовать
@@ -43,6 +46,7 @@ public class MyGdxGame extends ApplicationAdapter {
 //            System.out.println(Gdx.input.getX());
 //            System.out.println(Gdx.graphics.getHeight() - Gdx.input.getX());
 //        }
+        target.update(dt);
 
 
     }
@@ -52,5 +56,6 @@ public class MyGdxGame extends ApplicationAdapter {
         batch.dispose();
 //        img.dispose();
         tank.dispose();
+        target.dispose();
     }
 }
