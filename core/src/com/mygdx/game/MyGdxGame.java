@@ -34,6 +34,7 @@ public class MyGdxGame extends ApplicationAdapter {
         target.render(batch);
 
 
+
         batch.end();// заканчиваем рисовать
     }
 

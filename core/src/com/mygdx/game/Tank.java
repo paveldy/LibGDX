@@ -134,6 +134,7 @@ public class Tank {
         projectile.update(dt);
     }
 
+
     public float[] checkCoordinat(float x, float y, float dt, int typeOfDirection, float angle) {
         float[] massiveOfXY = new float[3];
 //        angleInput = (int) angle % 360;
